@@ -75,7 +75,7 @@ export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 export const brainwaveServices = [
   "Photo generating",
   "Photo enhance",
-  "Seamless Integration",
+  "Xử Lý Chính Xác Và Nhanh Chóng",
 ];
 
 export const brainwaveServicesIcons = [
@@ -89,55 +89,54 @@ export const brainwaveServicesIcons = [
 export const roadmap = [
   {
     id: "0",
-    title: "Voice recognition",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
-    date: "May 2023",
-    status: "done",
+    title: "Tải lên và Chuyển đổi Dữ liệu",
+    text: "Nhân viên tải bộ chứng từ (ví dụ: House Bill of Lading, Email phân quyền, Arrival Notice) lên hệ thống D-LOG dưới định dạng .PDF. Hệ thống sử dụng PDF.js để phân tách và hiển thị các trang PDF, đồng thời áp dụng Google Vision API để nhận diện và chuyển đổi dữ liệu từ định dạng hình ảnh sang văn bản thô một cách chính xác nhất.",
+    date: "Bước 1",
+    status: "upload",
     imageUrl: roadmap1,
     colorful: true,
   },
   {
     id: "1",
-    title: "Gamification",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
-    date: "May 2023",
+    title: "Nhận diện và Khoanh vùng Dữ liệu",
+    text: "D-LOG áp dụng Google Gemini API và các logic xử lý để tự động nhận diện và đánh dấu các trường dữ liệu quan trọng như số vận đơn, cảng xếp/dỡ, trọng lượng, hoặc số container. Regex được sử dụng để lọc và định dạng thông tin từ văn bản thô, đảm bảo tính chính xác.",
+    date: "Bước 2",
     status: "progress",
     imageUrl: roadmap2,
   },
   {
     id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
-    date: "May 2023",
-    status: "done",
+    title: "Gán Dữ liệu vào Trường Thông tin Manifest",
+    text: "Hệ thống sử dụng logic xử lý dữ liệu để tự động gán các thông tin đã chọn lọc vào từng trường thông tin phù hợp trong biểu mẫu Manifest đã tích hợp. Các thao tác này đảm bảo dữ liệu được đặt chính xác vào đúng vị trí theo yêu cầu nghiệp vụ.",
+    date: "Bước 3",
+    status: "process",
     imageUrl: roadmap3,
   },
   {
     id: "3",
-    title: "Integration with APIs",
-    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-    date: "May 2023",
-    status: "progress",
+    title: "Xuất Báo cáo Manifest Hoàn Chỉnh",
+    text: "Cuối cùng, D-LOG tạo file Excel với định dạng chuyên nghiệp bằng ExcelJS. File chứa các trường thông tin chính xác và được định dạng theo chuẩn của biểu mẫu Manifest. Người dùng có thể tải xuống và sử dụng ngay lập tức trong nghiệp vụ.",
+    date: "Bước 4",
+    status: "done",
     imageUrl: roadmap4,
   },
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Tận dụng sức mạnh công nghệ tiên tiến để tối ưu hóa quy trình làm việc.";
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
-    text: collabText,
+    title: "Tốc độ xử lý nhanh chóng",
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "Hiệu quả và chính xác",
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "Hiệu suất vượt bậc",
   },
 ];
 
