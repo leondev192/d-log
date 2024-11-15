@@ -16,10 +16,12 @@ const Services = () => {
     <Section id="features">
       <div className="container">
         {/* Updated Heading Section */}
-        <Heading
-          title="Hệ Thống AI Tự Động Hóa Khai Báo Manifest"
-          text="D-LOG là giải pháp tiên phong, giúp doanh nghiệp tối ưu hóa quy trình khai báo Manifest với tốc độ nhanh chóng, độ chính xác vượt trội và khả năng tự động hóa toàn diện. Chúng tôi mang đến một hệ thống thông minh, hỗ trợ xử lý khối lượng lớn chứng từ, giảm thiểu sai sót và tiết kiệm chi phí vận hành."
-        />
+        <div className="flex flex-col items-center justify-center text-center space-y-4">
+          <Heading
+            title="Hệ Thống Tự Động Hóa Khai Báo Manifest"
+            text="D-LOG là giải pháp tiên phong, giúp doanh nghiệp tối ưu hóa quy trình khai báo Manifest với tốc độ nhanh chóng, độ chính xác vượt trội và khả năng tự động hóa toàn diện. Chúng tôi mang đến một hệ thống thông minh, hỗ trợ xử lý khối lượng lớn chứng từ, giảm thiểu sai sót và tiết kiệm chi phí vận hành."
+          />
+        </div>
 
         <div className="relative">
           <div className="relative z-1 flex flex-col lg:flex-row items-center h-auto mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-auto">
@@ -37,7 +39,7 @@ const Services = () => {
             {/* Right Section: Content */}
             <div className="relative z-1 w-full lg:w-2/5 max-w-[40rem] ml-auto text-center lg:text-left">
               <h4 className="h4 mb-4">AI Manifest</h4>
-              <p className="body-2 mb-6 text-n-3">
+              <p className="body-2 mb-6 text-n-3 ">
                 Hệ thống AI hiện đại tự động nhận diện và xử lý dữ liệu từ tệp
                 PDF, giúp tối ưu hóa quy trình khai báo Manifest một cách nhanh
                 chóng và chính xác.
