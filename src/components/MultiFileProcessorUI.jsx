@@ -221,7 +221,8 @@ const MultiFileProcessor = () => {
             >
               <span
                 style={{
-                  background: "linear-gradient(90deg, #000000, #00f7ff)",
+                  background:
+                    "linear-gradient(90deg, #1d17ba, #bb00ff, #aa17ba)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}

@@ -39,34 +39,29 @@ import {
 export const navigation = [
   {
     id: "0",
-    title: "Features",
+    title: "Tính Năng",
     url: "#features",
   },
   {
-    id: "1",
-    title: "Pricing",
-    url: "#pricing",
-  },
-  {
     id: "2",
-    title: "How to use",
+    title: "Hướng Dẫn",
     url: "#how-to-use",
   },
+
   {
     id: "3",
-    title: "Roadmap",
+    title: "Lộ Trình",
     url: "#roadmap",
   },
   {
-    id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
+    id: "1",
+    title: "Liên Hệ",
+    url: "#pricing",
   },
   {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
+    id: "4",
+    title: "Câu Hỏi Thường Gặp",
+    url: "#signup",
     onlyMobile: true,
   },
 ];

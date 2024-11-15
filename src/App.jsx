@@ -7,7 +7,6 @@ import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
-import Function from "./components/MultiFileProcessorUI";
 
 const App = () => {
   return (
@@ -15,7 +14,6 @@ const App = () => {
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
-        <Function />
         <Benefits />
         <Collaboration />
         <Services />
