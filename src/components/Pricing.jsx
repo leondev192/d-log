@@ -92,7 +92,7 @@ const MultiFileProcessor = () => {
         </h1>
         <p
           className="text-gray-600 mb-6 text-center"
-          style={{ color: "linear-gradient(to right, #4facfe, #00f2fe)" }}
+          style={{ color: "linear-gradient(to right, #1d17ba, #bb00ff,)" }}
         >
           {typedText}
         </p>
@@ -195,7 +195,7 @@ const MultiFileProcessor = () => {
         {Object.keys(aiResponse).length > 0 && (
           <button
             onClick={handleExportToExcel}
-            className="mt-6 py-2 px-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white font-bold rounded-lg hover:from-blue-600 hover:to-teal-600 w-full"
+            className="mt-6 py-2 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg  w-full"
           >
             Xuất File Excel
           </button>

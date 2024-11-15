@@ -51,7 +51,35 @@ const Hero = () => {
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img src={robot} width={1024} height={490} alt="AI" />
+                <div className="relative max-w-full mx-auto p-4 md:max-w-5xl xl:mb-24">
+                  <div className="relative z-10 p-0.5 rounded-2xl bg-conic-gradient">
+                    <div className="relative bg-n-8 rounded-lg overflow-hidden">
+                      {/* Header Background */}
+                      <div className="h-[1.4rem] bg-n-10 rounded-t-lg" />
+
+                      {/* Image Aspect Ratio for Responsiveness */}
+                      <div className="aspect-w-4 aspect-h-3 md:aspect-w-16 md:aspect-h-9">
+                        <img
+                          src={robot}
+                          className="w-full h-full object-cover"
+                          alt="AI"
+                        />
+                      </div>
+                    </div>
+                    <Gradient />
+                  </div>
+
+                  {/* Background Image */}
+                  <div className="absolute -top-1/2 left-1/2 w-[200%] -translate-x-1/2 md:-top-[40%] md:w-[150%] lg:-top-[60%]">
+                    <img
+                      src={heroBackground}
+                      className="w-full h-auto"
+                      alt="hero"
+                    />
+                  </div>
+
+                  <BackgroundCircles />
+                </div>
               </div>
             </div>
 

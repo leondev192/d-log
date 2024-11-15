@@ -99,7 +99,7 @@ const Services = () => {
                 <h4 className="h4 mb-4">Đội Ngũ Đồng Hành</h4>
 
                 <ul className="list-disc pl-5 space-y-2 text-n-3">
-                  <li>Lê Thị Ý Nhi</li>
+                  <li>Lê Thị Như Ý</li>
                   <li>Đỗ Thành Đạt</li>
                   <li>Võ Thị Hằng Nga</li>
                   <li>Nguyễn Ngọc Minh Thư</li>
@@ -125,12 +125,10 @@ const Services = () => {
                 </ul>
               </div>
 
-              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+              <div className="relative h-[20rem] bg-black rounded-xl overflow-hidden md:h-[25rem]">
                 <img
                   src={service3}
-                  className="w-full h-full object-cover"
-                  width={520}
-                  height={400}
+                  className="absolute inset-0 w-full h-full object-cover opacity-80"
                   alt="Challenges and Opportunities"
                 />
               </div>

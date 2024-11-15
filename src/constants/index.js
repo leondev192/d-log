@@ -42,11 +42,7 @@ export const navigation = [
     title: "Giới Thiệu",
     url: "#features",
   },
-  {
-    id: "1",
-    title: "Tính Năng",
-    url: "#process",
-  },
+
   {
     id: "2",
     title: "Công Nghệ",
@@ -55,15 +51,13 @@ export const navigation = [
 
   {
     id: "3",
-    title: "Lộ Trình",
+    title: "Quy Trình",
     url: "#roadmap",
   },
-
   {
-    id: "4",
-    title: "Câu Hỏi Thường Gặp",
-    url: "#signup",
-    onlyMobile: true,
+    id: "1",
+    title: "Tính Năng",
+    url: "#process",
   },
 ];
 
