@@ -7,8 +7,7 @@ const Footer = () => {
     <Section crosses className="!px-0 !py-10">
       <div className="container flex sm:justify-center justify-center items-center gap-10 max-sm:flex-col">
         <p className="caption text-n-4 lg:block">
-          © {new Date().getFullYear()}. Bản quyền thuộc về D-LOG DIGITAL
-          LOGISTICS
+          © {new Date().getFullYear()}. Hệ thống phát triển bởi Team D-LOG
         </p>
       </div>
     </Section>

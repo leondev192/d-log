@@ -39,10 +39,12 @@ const Hero = () => {
             Giải phóng sức mạnh AI cùng D-LOG. Nâng cao hiệu suất, tối ưu quy
             trình – Tương lai của bạn bắt đầu ngay hôm nay!
           </p>
-          <Button href="/pricing" white>
-            Bắt đầu trải nghiệm ngay
-          </Button>
+
+          <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
+            <Button href="#process">Trải nghiệm ngay</Button>
+          </div>
         </div>
+
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">

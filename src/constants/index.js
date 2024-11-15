@@ -39,13 +39,18 @@ import {
 export const navigation = [
   {
     id: "0",
-    title: "Tính Năng",
+    title: "Giới Thiệu",
     url: "#features",
   },
   {
+    id: "1",
+    title: "Tính Năng",
+    url: "#process",
+  },
+  {
     id: "2",
-    title: "Hướng Dẫn",
-    url: "#how-to-use",
+    title: "Công Nghệ",
+    url: "#it",
   },
 
   {
@@ -53,11 +58,7 @@ export const navigation = [
     title: "Lộ Trình",
     url: "#roadmap",
   },
-  {
-    id: "1",
-    title: "Liên Hệ",
-    url: "#pricing",
-  },
+
   {
     id: "4",
     title: "Câu Hỏi Thường Gặp",
@@ -122,21 +123,27 @@ export const roadmap = [
   },
 ];
 
-export const collabText =
-  "Tận dụng sức mạnh công nghệ tiên tiến để tối ưu hóa quy trình làm việc.";
-
+export const collabText = "";
 export const collabContent = [
   {
     id: "0",
-    title: "Tốc độ xử lý nhanh chóng",
+    title: "Giao diện người dùng hiện đại",
+    text: "Sử dụng React.js, Ant Design và Tailwind CSS để xây dựng giao diện động, thân thiện và tối ưu hiệu suất.",
   },
   {
     id: "1",
-    title: "Hiệu quả và chính xác",
+    title: "Xử lý dữ liệu PDF",
+    text: "Áp dụng PDF.js và Google Vision API để nhận diện và trích xuất dữ liệu từ tài liệu PDF một cách hiệu quả.",
   },
   {
     id: "2",
-    title: "Hiệu suất vượt bậc",
+    title: "Phân tích và trích xuất dữ liệu",
+    text: "Google Gemini API và Regex giúp phân tích, lọc và định dạng dữ liệu một cách chính xác.",
+  },
+  {
+    id: "3",
+    title: "Tạo báo cáo chuyên nghiệp",
+    text: "ExcelJS hỗ trợ tạo file Excel với định dạng chuẩn, tích hợp đầy đủ các trường thông tin chính xác.",
   },
 ];
 

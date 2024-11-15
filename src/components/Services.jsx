@@ -13,15 +13,17 @@ import Generating from "./Generating";
 
 const Services = () => {
   return (
-    <Section id="how-to-use">
+    <Section id="features">
       <div className="container">
+        {/* Updated Heading Section */}
         <Heading
-          title="Generative AI made for creators."
-          text="Brainwave unlocks the potential of AI-powered applications"
+          title="Hệ Thống AI Tự Động Hóa Khai Báo Manifest"
+          text="D-LOG là giải pháp tiên phong, giúp doanh nghiệp tối ưu hóa quy trình khai báo Manifest với tốc độ nhanh chóng, độ chính xác vượt trội và khả năng tự động hóa toàn diện. Chúng tôi mang đến một hệ thống thông minh, hỗ trợ xử lý khối lượng lớn chứng từ, giảm thiểu sai sót và tiết kiệm chi phí vận hành."
         />
 
         <div className="relative">
-          <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
+          <div className="relative z-1 flex flex-col lg:flex-row items-center h-auto mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-auto">
+            {/* Left Section: AI Illustration */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
               <img
                 className="w-full h-full object-cover md:object-right"
@@ -32,28 +34,59 @@ const Services = () => {
               />
             </div>
 
-            <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
-              <p className="body-2 mb-[3rem] text-n-3">
-                Brainwave unlocks the potential of AI-powered applications
+            {/* Right Section: Content */}
+            <div className="relative z-1 w-full lg:w-2/5 max-w-[40rem] ml-auto text-center lg:text-left">
+              <h4 className="h4 mb-4">AI Manifest</h4>
+              <p className="body-2 mb-6 text-n-3">
+                Hệ thống AI hiện đại tự động nhận diện và xử lý dữ liệu từ tệp
+                PDF, giúp tối ưu hóa quy trình khai báo Manifest một cách nhanh
+                chóng và chính xác.
               </p>
-              <ul className="body-2">
-                {brainwaveServices.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start py-4 border-t border-n-6"
-                  >
-                    <img width={24} height={24} src={check} />
-                    <p className="ml-4">{item}</p>
-                  </li>
-                ))}
+
+              <ul className="body-2 space-y-4">
+                <li className="flex items-start border-t border-n-6 pt-4">
+                  <img width={24} height={24} src={check} alt="Check" />
+                  <p className="ml-4">
+                    Tự động nhận diện và trích xuất thông tin từ tài liệu PDF
+                    một cách chính xác.
+                  </p>
+                </li>
+                <li className="flex items-start border-t border-n-6 pt-4">
+                  <img width={24} height={24} src={check} alt="Check" />
+                  <p className="ml-4">
+                    Nâng cao tốc độ xử lý chứng từ, tiết kiệm thời gian và chi
+                    phí vận hành.
+                  </p>
+                </li>
+                <li className="flex items-start border-t border-n-6 pt-4">
+                  <img width={24} height={24} src={check} alt="Check" />
+                  <p className="ml-4">
+                    Hỗ trợ xuất dữ liệu Manifest đầy đủ và đúng chuẩn nghiệp vụ.
+                  </p>
+                </li>
+                <li className="flex items-start border-t border-n-6 pt-4">
+                  <img width={24} height={24} src={check} alt="Check" />
+                  <p className="ml-4">
+                    Tích hợp công nghệ AI tiên tiến để giảm thiểu sai sót thủ
+                    công.
+                  </p>
+                </li>
+                <li className="flex items-start border-t border-n-6 pt-4">
+                  <img width={24} height={24} src={check} alt="Check" />
+                  <p className="ml-4">
+                    Dễ dàng quản lý và sử dụng thông qua giao diện hiện đại,
+                    trực quan.
+                  </p>
+                </li>
               </ul>
             </div>
 
-            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
+            {/* Bottom Section: Generating Component */}
+            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg:right-auto lg:bottom-8 lg:-translate-x-1/2" />
           </div>
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
+            {/* Team Members Section */}
             <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
               <div className="absolute inset-0">
                 <img
@@ -61,50 +94,37 @@ const Services = () => {
                   className="h-full w-full object-cover"
                   width={630}
                   height={750}
-                  alt="robot"
+                  alt="team"
                 />
               </div>
 
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">Photo editing</h4>
-                <p className="body-2 mb-[3rem] text-n-3">
-                  Automatically enhance your photos using our AI app&apos;s
-                  photo editing feature. Try it now!
-                </p>
-              </div>
+                <h4 className="h4 mb-4">Đội Ngũ Đồng Hành</h4>
 
-              <PhotoChatMessage />
+                <ul className="list-disc pl-5 space-y-2 text-n-3">
+                  <li>Lê Thị Ý Nhi</li>
+                  <li>Đỗ Thành Đạt</li>
+                  <li>Võ Thị Hằng Nga</li>
+                  <li>Nguyễn Ngọc Minh Thư</li>
+                </ul>
+              </div>
             </div>
 
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
+            {/* Challenges Section */}
+            <div className="p-4 bg-black rounded-3xl overflow-hidden lg:min-h-[46rem]">
               <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">Video generation</h4>
+                <h4 className="h4 mb-4">Thách Thức & Cơ Hội</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                  The world’s most powerful AI photo and video art generation
-                  engine. What will you create?
+                  Chúng tôi không chỉ đối mặt với các thách thức trong việc xử
+                  lý dữ liệu mà còn nhìn thấy cơ hội để cải tiến và phát triển.
                 </p>
-
-                <ul className="flex items-center justify-between">
-                  {brainwaveServicesIcons.map((item, index) => (
-                    <li
-                      key={index}
-                      className={`rounded-2xl flex items-center justify-center ${
-                        index === 2
-                          ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
-                          : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
-                      }`}
-                    >
-                      <div
-                        className={
-                          index === 2
-                            ? "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"
-                            : ""
-                        }
-                      >
-                        <img src={item} width={24} height={24} alt={item} />
-                      </div>
-                    </li>
-                  ))}
+                <ul className="list-disc pl-5 space-y-2 text-n-3">
+                  <li>Xử lý khối lượng lớn dữ liệu với độ chính xác cao.</li>
+                  <li>Đảm bảo tuân thủ quy định và tiêu chuẩn khai báo.</li>
+                  <li>
+                    Phát triển giao diện trực quan, thân thiện với người dùng.
+                  </li>
+                  <li>Giảm chi phí vận hành và tăng năng suất.</li>
                 </ul>
               </div>
 
@@ -114,11 +134,8 @@ const Services = () => {
                   className="w-full h-full object-cover"
                   width={520}
                   height={400}
-                  alt="Scary robot"
+                  alt="Challenges and Opportunities"
                 />
-
-                <VideoChatMessage />
-                <VideoBar />
               </div>
             </div>
           </div>

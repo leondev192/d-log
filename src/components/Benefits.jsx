@@ -6,11 +6,11 @@ import { LeftCurve, RightCurve } from "./design/Collaboration";
 
 const Benefits = () => {
   return (
-    <Section crosses>
+    <Section id="it" crosses>
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
-          <h2 className="h2 mb-4 md:mb-8" id="features">
-            Hệ Thống AI Tự Động Hóa Khai Báo Manifest
+          <h2 className="h4 mb-4 md:mb-8" id="features">
+            Công nghệ sử dụng
           </h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
@@ -27,7 +27,7 @@ const Benefits = () => {
             ))}
           </ul>
 
-          <Button>Trải nghiệm ngay</Button>
+          <Button href="#process">Trải nghiệm ngay</Button>
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">

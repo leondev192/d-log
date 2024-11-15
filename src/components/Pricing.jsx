@@ -81,7 +81,10 @@ const MultiFileProcessor = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-6">
+    <div
+      id="process"
+      className="flex flex-col items-center justify-center min-h-screen bg-black p-6"
+    >
       <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-4xl">
         {/* Title */}
         <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
