@@ -30,7 +30,15 @@ const MultiFileProcessor = () => {
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
-    setSelectedFiles(files);
+
+    // Filter only PDF files
+    const pdfFiles = files.filter((file) => file.type === "application/pdf");
+
+    if (pdfFiles.length < files.length) {
+      alert("Chỉ được chọn các file PDF.");
+    }
+
+    setSelectedFiles(pdfFiles);
   };
 
   const handleFileDelete = () => {
@@ -105,10 +113,11 @@ const MultiFileProcessor = () => {
           <input
             type="file"
             multiple
-            accept=".pdf,.png,.jpg"
+            accept=".pdf"
             onChange={handleFileChange}
             className="block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
           />
+
           {/* Display uploaded files */}
           {selectedFiles.length > 0 && (
             <div className="flex flex-col gap-2">
