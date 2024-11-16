@@ -40,13 +40,13 @@ export const navigation = [
   {
     id: "0",
     title: "Giới Thiệu",
-    url: "#features",
+    url: "#intro",
   },
 
   {
     id: "2",
     title: "Công Nghệ",
-    url: "#it",
+    url: "#technology",
   },
 
   {

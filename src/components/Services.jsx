@@ -13,7 +13,7 @@ import Generating from "./Generating";
 
 const Services = () => {
   return (
-    <Section id="features">
+    <Section id="intro">
       <div className="container">
         {/* Updated Heading Section */}
         <div className="flex flex-col items-center justify-center text-center space-y-4">
