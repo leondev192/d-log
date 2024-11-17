@@ -125,7 +125,6 @@ Please extract these details from the provided data, ensuring that both "Port of
 Text input:
 ${text}
 `;
-
 export const parseAIResponse = (response) => {
   if (typeof response !== "string") {
     throw new Error("Invalid AI response format. Expected a string.");
@@ -154,12 +153,10 @@ export const parseAIResponse = (response) => {
 
   for (const [key, regex] of Object.entries(patterns)) {
     const match = response.match(regex);
-    if (match) {
-      data[key] = match[1].trim();
-    }
+    data[key] = match ? match[1].trim() : "Not Found";
   }
 
-  return data; // Trả về dữ liệu mà không cần thêm thông báo nào
+  return data; // Trả về dữ liệu, với thông báo "Not Found" nếu trường không tồn tại
 };
 
 // export const parseAIResponse = (response) => {
