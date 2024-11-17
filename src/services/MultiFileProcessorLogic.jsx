@@ -118,11 +118,6 @@ Use the following codes to convert kinds of packages:
 
 Please extract these details from the provided data, ensuring that both "Port of Loading" and "Port of Discharge" fields are replaced with the corresponding codes where applicable, that "Kind of Packages" is replaced with its corresponding code, and that both "Number and Kind of Packages, Description of Goods" and "Container & Seal No." are divided into separate fields as specified. Additionally, only extract the "Container No." if the text contains the "Consignor/Shipper" section.
 
-If mandatory fields are missing, respond with:
-"Thiếu thông tin quan trọng: [List of Missing Fields]. Vui lòng kiểm tra và tải lên file có đầy đủ các trường dữ liệu yêu cầu."
-
-If all fields are missing, respond with:
-"Không đủ dữ liệu để hoàn tất một bản khai sơ lược hàng hóa! Vui lòng tải lên file chứng từ chính xác hơn."
 
 Text input:
 ${text}
