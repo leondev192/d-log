@@ -87,21 +87,21 @@ export const sendToGemini = async (combinedText) => {
 export const createPrompt = (text) => `
 Extract the following information from the text provided, formatting each detail on a new line and omitting unnecessary information (such as telephone and fax numbers unless specifically requested). Use the examples for clarity:
 
-1. Bill of Lading No. (Extract only the bill of lading number from the contain of which file contains the information "PROFORMA"): …(example PLN00203022)
-2. Bill of Lading No.(Extract only the bill of lading number from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example HCMBKK031112022)
-3. Description of Goods (extract only the description from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example FABRIC 100 PCT. POLYESTER W: 114 CM)
-4. Consignor/Shipper (include only company name and address from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example MAC - NELS SHIPPING THAILAND CO., LTD # 729 92 RATCHADAPHISEK RD, BANG PHONG PHANG, YAN NAWA,  BANGKOK 10120, THAILAND  )
-5. Consignee/Consigned to Order of (include only company name and address from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example TO THE ORDER OF THE HOLDER SURRENDERED BBL NO. 1/DKK 290439 TO BE ISSUED BY MAC - NELS CONTAINER LINES )
-6. Notify Party (include only company name and address from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example SS. LOGISTICS CO., LTD # 280A25 LUONG DINH CUA STREET, AN PHU WARD,  DISTRICT THU DUC, HO CHI MINH CITY, VIETNAM.)
+1. Vận đơn chính (M-B/L): …(example PLN00203022)
+2. Bill of Lading No.: …(example HCMBKK029112022)
+3. Description of Goods (extract only the description): …(example FABRIC 100 PCT. POLYESTER W: 114 CM)
+4. Consignor/Shipper (include only company name and address): …(example MAC NELS SHIPPING VIETNAM CO., LTD, 29 PHO DỌC CHINH STR, DIST 1, HOCHIMINH CITY, VIETNAM)
+5. Consignee/Consigned to Order of (include only company name and address): …(example TO THE ORDER OF THE HOLDER SURRENDERED BBL NO. 1/DKK 290439 TO BE ISSUED BY MAC - NELS CONTAINER LINES )
+6. Notify Party (include only company name and address): …(example PRO LOG CO., LTD, 191/14 CTL TOWEL, 28TH FLOOR, RATCHADAPISE RD., KLONG TOEY BANGKOK 10110 THAILAND)
 7. Port of Loading (convert to port code using the table below if matched): …(example VNCLI)
 8. Port of Discharge (convert to port code using the table below if matched): …(example THBKK)
-9.  Place of Delivery : …(example  HO CHI MINH, VIETNAM CFS)
-10. Number of Packages (extract only the quantity from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example 1)
+9. Đến cảng (Terminal): …(example BANGKOK)
+10. Number of Packages (extract only the quantity): …(example 1)
 11. Kind of Packages (convert to code using the table below if matched): …(example CT)
-12. Container No. (Extract only the container number from the contain of which file contains the information " HOUSE BILL OF LADING"): …(example CSLU2082865)
-13. Seal No. (Extract only the seal number from the contain of which file contains the information " HOUSE BILL OF LADING"):  …(example 21567932)
-14. Gross Weight (extract only the number from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example 1,899.58)
-15. CBM/Volume (extract only the number from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example 1.000)
+12. Container No. (Extract only the container number from the contain of which file contains the information "Consignor” or “Shipper"): …(example CSLU2082865)
+13. Seal No. (Extract only the seal number from the contain of which file contains the information "Consignor” or “Shipper"):  …(example 21567932)
+14. Gross Weight (extract only the number): …(example 1,899.58)
+15. CBM/Volume (extract only the number): …(example 1.000)
 16. Place and Date of Issue (extract only the date and format as dd/mm/yyyy): …(example 01/12/2022).
 
 Use the following codes to convert ports of loading and discharge:
@@ -117,19 +117,18 @@ Use the following codes to convert kinds of packages:
 - PALS S.T.C => PL
 - ROLS S.T.C => RL
 - PKGS S.T.C => PK
+
 Please extract these details from the provided data, ensuring that both "Port of Loading" and "Port of Discharge" fields are replaced with the corresponding codes where applicable, that "Kind of Packages" is replaced with its corresponding code, and that both "Number and Kind of Packages, Description of Goods" and "Container & Seal No." are divided into separate fields as specified. Additionally, only extract the "Container No." if the text contains the "Consignor/Shipper" section.
 
+If mandatory fields are missing, respond with:
+"Thiếu thông tin quan trọng: [List of Missing Fields]. Vui lòng kiểm tra và tải lên file có đầy đủ các trường dữ liệu yêu cầu."
 
+If all fields are missing, respond with:
+"Không đủ dữ liệu để hoàn tất một bản khai sơ lược hàng hóa! Vui lòng tải lên file chứng từ chính xác hơn."
 
 Text input:
 ${text}
 `;
-
-// If mandatory fields are missing, respond with:
-// "Thiếu thông tin quan trọng: [List of Missing Fields]. Vui lòng kiểm tra và tải lên file có đầy đủ các trường dữ liệu yêu cầu."
-
-// If all fields are missing, respond with:
-// "Không đủ dữ liệu để hoàn tất một bản khai sơ lược hàng hóa! Vui lòng tải lên file chứng từ chính xác hơn."
 
 export const parseAIResponse = (response) => {
   if (typeof response !== "string") {
