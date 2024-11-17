@@ -121,10 +121,16 @@ Please extract these details from the provided data, ensuring that both "Port of
 
 
 
-
 Text input:
 ${text}
 `;
+
+// If mandatory fields are missing, respond with:
+// "Thiếu thông tin quan trọng: [List of Missing Fields]. Vui lòng kiểm tra và tải lên file có đầy đủ các trường dữ liệu yêu cầu."
+
+// If all fields are missing, respond with:
+// "Không đủ dữ liệu để hoàn tất một bản khai sơ lược hàng hóa! Vui lòng tải lên file chứng từ chính xác hơn."
+
 export const parseAIResponse = (response) => {
   if (typeof response !== "string") {
     throw new Error("Invalid AI response format. Expected a string.");
@@ -150,68 +156,34 @@ export const parseAIResponse = (response) => {
   };
 
   const data = {};
+  const missingFields = []; // Track missing fields
 
   for (const [key, regex] of Object.entries(patterns)) {
     const match = response.match(regex);
-    data[key] = match ? match[1].trim() : "Not Found";
+    if (match) {
+      data[key] = match[1].trim();
+    } else {
+      missingFields.push(key); // Add missing field to the list
+    }
   }
 
-  return data; // Trả về dữ liệu, với thông báo "Not Found" nếu trường không tồn tại
+  // If all fields are missing, return with a custom message
+  if (missingFields.length === Object.keys(patterns).length) {
+    return {
+      "Thông báo":
+        "Không đủ dữ liệu để hoàn tất một bản khai sơ lược hàng hóa! Vui lòng tải lên file chứng từ chính xác hơn.",
+    };
+  }
+
+  // If some fields are missing, notify the user with the missing fields
+  if (missingFields.length > 0) {
+    data["Thông báo"] = `Thiếu thông tin quan trọng: ${missingFields.join(
+      ", "
+    )}. Vui lòng kiểm tra và tải lên file có đầy đủ các trường dữ liệu yêu cầu.`;
+  }
+
+  return data; // Return the data including missing field notifications if applicable
 };
-
-// export const parseAIResponse = (response) => {
-//   if (typeof response !== "string") {
-//     throw new Error("Invalid AI response format. Expected a string.");
-//   }
-
-//   const patterns = {
-//     "Vận đơn chính (M-B/L)": /Vận đơn chính \(M-B\/L\): (.+)/,
-//     "Bill of Lading No.": /Bill of Lading No.: (.+)/,
-//     "Description of Goods": /Description of Goods: (.+)/,
-//     "Consignor/Shipper": /Consignor\/Shipper: (.+)/,
-//     "Consigned to Order of": /Consigned to Order of: (.+)/,
-//     "Notify Party": /Notify Party: (.+)/,
-//     "Port of Loading": /Port of Loading: (.+)/,
-//     "Port of Discharge": /Port of Discharge: (.+)/,
-//     "Đến cảng (Terminal)": /Đến cảng \(Terminal\): (.+)/,
-//     "Number of Packages": /Number of Packages: (.+)/,
-//     "Kind of Packages": /Kind of Packages: (.+)/,
-//     "Container No.": /Container No.: (.+)/,
-//     "Seal No.": /Seal No.: (.+)/,
-//     "Gross Weight": /Gross Weight: (.+)/,
-//     "CBM/Volume": /CBM\/Volume: (.+)/,
-//     "Place and Date of Issue": /Place and Date of Issue: (.+)/,
-//   };
-
-//   const data = {};
-//   const missingFields = []; // Track missing fields
-
-//   for (const [key, regex] of Object.entries(patterns)) {
-//     const match = response.match(regex);
-//     if (match) {
-//       data[key] = match[1].trim();
-//     } else {
-//       missingFields.push(key); // Add missing field to the list
-//     }
-//   }
-
-//   // If all fields are missing, return with a custom message
-//   if (missingFields.length === Object.keys(patterns).length) {
-//     return {
-//       "Thông báo":
-//         "Không đủ dữ liệu để hoàn tất một bản khai sơ lược hàng hóa! Vui lòng tải lên file chứng từ chính xác hơn.",
-//     };
-//   }
-
-//   // If some fields are missing, notify the user with the missing fields
-//   if (missingFields.length > 0) {
-//     data["Thông báo"] = `Thiếu thông tin quan trọng: ${missingFields.join(
-//       ", "
-//     )}. Vui lòng kiểm tra và tải lên file có đầy đủ các trường dữ liệu yêu cầu.`;
-//   }
-
-//   return data; // Return the data including missing field notifications if applicable
-// };
 
 // Merge existing and new AI data
 export const mergeData = (existingData, newData) => {
