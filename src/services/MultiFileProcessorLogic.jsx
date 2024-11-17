@@ -85,10 +85,8 @@ export const sendToGemini = async (combinedText) => {
   }
 };
 export const createPrompt = (text) => `
-Extract the following information from the text provided, formatting each detail on a new line and omitting unnecessary information (such as telephone and fax numbers unless specifically requested). Use the examples for clarity:
-
-1. Bill of Lading No. (Extract only the seal number from the contain of which file contains the information "FCL/FCL"): …(example PLN00203022)
-2. Bill of Lading No.((Extract only the seal number from the contain of which file contains the information "lCL/LCL")): …(example HCMBKK029112022)
+1. Bill of Lading No. (Extract only the bill of lading number from the contain of which file contains the information "FCL/FCL"): …(example PLN00203022)
+2. Bill of Lading No.(Extract only the bill of lading number from the contain of which file contains the information "LCL/LCL"): …(example HCMBKK029112022)
 3. Description of Goods (extract only the description): …(example FABRIC 100 PCT. POLYESTER W: 114 CM)
 4. Consignor/Shipper (include only company name and address): …(example MAC NELS SHIPPING VIETNAM CO., LTD, 29 PHO DỌC CHINH STR, DIST 1, HOCHIMINH CITY, VIETNAM)
 5. Consignee/Consigned to Order of (include only company name and address): …(example TO THE ORDER OF THE HOLDER SURRENDERED BBL NO. 1/DKK 290439 TO BE ISSUED BY MAC - NELS CONTAINER LINES )
