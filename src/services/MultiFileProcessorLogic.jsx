@@ -85,6 +85,7 @@ export const sendToGemini = async (combinedText) => {
   }
 };
 export const createPrompt = (text) => `
+Extract the following information from the text provided, formatting each detail on a new line and omitting unnecessary information (such as telephone and fax numbers unless specifically requested). Use the examples for clarity:
 1. Bill of Lading No. (Extract only the bill of lading number from the contain of which file contains the information "FCL/FCL"): …(example PLN00203022)
 2. Bill of Lading No.(Extract only the bill of lading number from the contain of which file contains the information "LCL/LCL"): …(example HCMBKK029112022)
 3. Description of Goods (extract only the description): …(example FABRIC 100 PCT. POLYESTER W: 114 CM)
@@ -117,8 +118,6 @@ Use the following codes to convert kinds of packages:
 - PKGS S.T.C => PK
 
 Please extract these details from the provided data, ensuring that both "Port of Loading" and "Port of Discharge" fields are replaced with the corresponding codes where applicable, that "Kind of Packages" is replaced with its corresponding code, and that both "Number and Kind of Packages, Description of Goods" and "Container & Seal No." are divided into separate fields as specified. Additionally, only extract the "Container No." if the text contains the "Consignor/Shipper" section.
-
-
 Text input:
 ${text}
 `;
