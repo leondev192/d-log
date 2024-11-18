@@ -682,8 +682,8 @@ export const sendToGemini = async (combinedText) => {
 export const createPrompt = (text) => `
 Extract the following information from the text provided, formatting each detail on a new line and omitting unnecessary information (such as telephone and fax numbers unless specifically requested). Use the examples for clarity:
 
-1. M-Bill of Lading No.(Extract only the master bill of lading number from the contain of which file contains the information "PROFORMA"): …(example PLN00203022)
-2. H-Bill of Lading No.(Extract only the house bill of lading number from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example HCMBKK029112022)
+1. M-Bill of Lading No.:(Extract only the master bill of lading number from the contain of which file contains the information "PROFORMA"): …(example PLN00203022)
+2. H-Bill of Lading No.:(Extract only the house bill of lading number from the contain of which file contains the information "HOUSE BILL OF LADING"): …(example HCMBKK029112022)
 3. Description of Goods (extract only the description): …(example FABRIC 100 PCT. POLYESTER W: 114 CM)
 4. Consignor/Shipper (include only company name and address): …(example MAC NELS SHIPPING VIETNAM CO., LTD, 29 PHO DỌC CHINH STR, DIST 1, HOCHIMINH CITY, VIETNAM)
 5. Consignee/Consigned to Order of (include only company name and address): …(example TO THE ORDER OF THE HOLDER SURRENDERED BBL NO. 1/DKK 290439 TO BE ISSUED BY MAC - NELS CONTAINER LINES )
@@ -925,13 +925,13 @@ export const exportToExcel = async (aiResponse) => {
     const fieldsMapping = [
       {
         position: "Q4",
-        key: "M-Bill of Lading No.",
-        header: "M-Bill of Lading No.",
+        key: "M-Bill of Lading No",
+        header: "M-Bill of Lading No",
       },
       {
         position: "O4",
-        key: "H-Bill of Lading No.",
-        header: "H-Bill of Lading No.",
+        key: "H-Bill of Lading No",
+        header: "H-Bill of Lading No",
       },
       { position: "E4", key: "Consignor/Shipper", header: "Consignor/Shipper" },
       {
