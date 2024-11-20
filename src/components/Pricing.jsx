@@ -71,7 +71,7 @@ const MultiFileProcessor = () => {
       setAiResponse(mergedData);
     } catch (error) {
       console.error("Error during processing:", error);
-      alert("Đã xảy ra lỗi. Vui lòng thử lại.");
+      alert("Máy chủ bị quá tải. Vui lòng thử lại sau.");
     } finally {
       setLoading(false);
       setProgress(0);
