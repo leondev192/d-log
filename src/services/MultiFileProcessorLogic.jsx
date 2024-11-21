@@ -1265,7 +1265,7 @@ Extract the following information from the text provided, formatting each detail
 11. Kind of Packages (convert to code using the table below if matched): …(example CT)
 12. Container No. (Extract only the container number from the contain of which file contains the information "Consignor” or “Shipper"): …(example CSLU2082865)
 13. Seal No. (Extract only the seal number from the contain of which file contains the information "Consignor” or “Shipper"):  …(example 21567932)
-14. Gross Weight (extract only the number): …(example 1,899.58)
+14. Gross Weight (extract only the number, correct if there are multiple numbers like the following example): …(example 1,899.58)
 15. CBM/Volume (extract only the number): …(example 1.000)
 16. Place and Date of Issue (extract only the date and format as dd/mm/yyyy): …(example 01/12/2022).
 
