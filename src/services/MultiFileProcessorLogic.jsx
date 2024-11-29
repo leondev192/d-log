@@ -1174,7 +1174,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 
 // Constants
 const GOOGLE_VISION_API_KEY = import.meta.env.VITE_GOOGLE_VISION_API_KEY;
-const GEMINI_API_KEY = "AIzaSyDZmYOaYBq4eMaXerVh7kDjgpB5nsm_8bc";
+const GEMINI_API_KEY = "AIzaSyAt5g2wh2QDVEK7iL8G34YlQiNXgo-EBgI";
 // console.log(GEMINI_API_KEY, GOOGLE_VISION_API_KEY);
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
